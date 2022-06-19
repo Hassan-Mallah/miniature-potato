@@ -6,3 +6,7 @@ Few Small Projects
 Translate app: 
 - pip install translate
 - https://pypi.org/project/translate/
+
+Bootstrap
+- https://getbootstrap.com/docs/4.0/examples/checkout/
+- view-source:https://getbootstrap.com/docs/4.0/examples/checkout/
