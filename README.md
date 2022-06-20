@@ -10,3 +10,4 @@ Translate app:
 Bootstrap
 - https://getbootstrap.com/docs/4.0/examples/checkout/
 - view-source:https://getbootstrap.com/docs/4.0/examples/checkout/
+- forms: https://getbootstrap.com/docs/4.0/components/forms/
