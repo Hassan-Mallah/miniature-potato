@@ -4,6 +4,5 @@ from .views import *
 
 
 urlpatterns = [
-    path('', index),
-    path('translate', translate),
+    path('', translate),
 ]

@@ -1,22 +1,17 @@
-from django.http import HttpResponse, HttpRequest
-from django.template import loader
+from django.http import HttpRequest
+from django.shortcuts import render
 
 
 # Create your views here.
 
-def index(request: HttpRequest):
+def translate(request: HttpRequest):
     print(request.GET)
     print(request.POST)
     if 'text' in request.GET:
         print(request.GET['text'])
 
-    template = loader.get_template('dictionary.html')
-
-    # return HttpResponse('welcome to dictionary app')
-    return HttpResponse(template.render())
-
-
-def translate(request: HttpRequest):
-    print('this is translate')
-
-    return HttpResponse('response')
+    context = {
+        'input': 'test input',
+        'output': 'test output'
+    }
+    return render(request, 'translator.html', context=context)

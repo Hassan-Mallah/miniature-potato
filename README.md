@@ -7,7 +7,8 @@ Translate app:
 - pip install translate
 - https://pypi.org/project/translate/
 
-Bootstrap
+Bootstrap / Django forms
 - https://getbootstrap.com/docs/4.0/examples/checkout/
 - view-source:https://getbootstrap.com/docs/4.0/examples/checkout/
 - forms: https://getbootstrap.com/docs/4.0/components/forms/
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
