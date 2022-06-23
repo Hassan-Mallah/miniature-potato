@@ -5,13 +5,36 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 <body class="bg-light">
+
 <div class="container">
     <br>
     <div class="w-100 p-3" style="background-color: #eee; text-align: center;">
         <h1>Welcome to translator!</h1>
     </div>
-
     <form action="." method="get">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="inputLanguage">Select Input Language</label><br>
+                <select id="inputLanguage" name="inputLanguage" class="btn btn-secondary dropdown-toggle">
+                    <option>English</option>
+                    <option>Turkish</option>
+                    <option>Russian</option>
+                    <option>Arabic</option>
+                    <option>Chinese</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outputLanguage">Select Output Language</label><br>
+                <select id="outputLanguage" name="outputLanguage" class="btn btn-secondary dropdown-toggle">
+                    <option>English</option>
+                    <option>Turkish</option>
+                    <option>Russian</option>
+                    <option>Arabic</option>
+                    <option>Chinese</option>
+                </select>
+            </div>
+        </div>
+
         {% if input and output %}
         <div class="form-group">
             <label>Input</label>
