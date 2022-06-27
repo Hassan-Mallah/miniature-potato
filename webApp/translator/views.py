@@ -4,7 +4,7 @@ from translate import Translator
 from django.http import HttpResponseRedirect
 from .forms import NameForm
 from django.contrib.auth.models import User
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
@@ -13,6 +13,31 @@ from django.views.generic.edit import CreateView
 class SignUpView(CreateView):
     template_name = 'signup.html'
     form_class = UserCreationForm
+
+
+def ajax(request):
+    text = '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        <script>
+            window.onload = function () {
+                alert('window loaded');
+            };
+    
+            $(document).ready(function () {
+                alert('document loaded');
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Demo: window.onload() vs $(document).ready()</h1>
+    </body>
+    </html>
+    '''
+    return HttpResponse(text)
 
 
 def validate_username(request):
