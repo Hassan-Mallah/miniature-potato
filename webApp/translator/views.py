@@ -26,7 +26,45 @@ def ajax(request):
     </body>
     </html>
     '''
-    return HttpResponse(text)
+
+    text2 = '''
+    <!DOCTYPE html>
+    
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+    
+             $('#ajaxBtn').click(function(){
+                $.ajax('/translator/ajax_data',   // request url
+                {
+                    success: function (data, status, xhr) {    // success callback function
+                        $(document).ready(function () {
+                            alert('Loading');
+                        });
+
+                            $('p').append(data);
+                    }
+                });
+             });
+    
+            });
+    
+        </script>
+    </head>
+    <body>
+    <h1> jQuery ajax() demo
+    </h1>
+    <input type="button" id="ajaxBtn" value="Send Ajax request"/>
+    <p>
+    </p>
+    </body>
+    </html>
+    '''
+    return HttpResponse(text2)
 
 
 def translate(request: HttpRequest):
@@ -47,3 +85,7 @@ def translate(request: HttpRequest):
         }
 
     return render(request, 'translator.html', context=context)
+
+
+def ajax_data(request: HttpRequest):
+    return HttpResponse('This is ajax data<br>')
