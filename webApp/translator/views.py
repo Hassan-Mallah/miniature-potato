@@ -89,6 +89,7 @@ def translate(request: HttpRequest):
 
 def ajax_data(request: HttpRequest):
     # htmls text here
+    # check it here http://127.0.0.1:8000/translator/ajax?
     text = 'This is ajax data<br>'
 
     return HttpResponse(text)
