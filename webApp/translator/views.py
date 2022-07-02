@@ -1,4 +1,4 @@
-from django.http import HttpRequest
+from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render
 from translate import Translator
 from django.http import JsonResponse, HttpResponse
@@ -83,6 +83,7 @@ def translate(request: HttpRequest):
             'input': request.GET['input'],
             'output': translation
         }
+        return JsonResponse(context)
 
     return render(request, 'translator.html', context=context)
 
