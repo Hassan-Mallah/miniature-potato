@@ -11,16 +11,20 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#myform').on('submit', function(e) {
+                e.preventDefault();
+            });
+
             // alert('document loaded');
 
 
-		 $('#ajaxBtn').click(function(){
-			$.ajax('/translator/ajax_data',   // request url
-			{
-				success: function (data, status, xhr) {    // success callback function
-						$('p').append(data);
-				}
-			});
+             $('#ajaxBtn1').click(function(){
+                $.ajax('/translator/ajax_data',   // request url
+                {
+                    success: function (data, status, xhr) {    // success callback function
+                            $('p').append(data);
+                    }
+                });
 		 });
 
         });
@@ -36,7 +40,7 @@
         <h1>Welcome to translator!</h1>
     </div>
     <!--    <form action="." method="get">-->
-    <form method="get">
+    <form method="get" id="myform">
         <div class="form-row">
             <div class="form-group">
                 <label for="inputLanguage">Select Input Language</label><br>
