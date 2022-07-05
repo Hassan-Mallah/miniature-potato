@@ -11,20 +11,20 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
+            // form
             $('#myform').on('submit', function(e) {
                 e.preventDefault();
                 alert('Loading');
 
-                $.ajax('/translator/ajax_data',   // request url
+                $.ajax('/translator/translate_text',   // request url
                 {
                     success: function (data, status, xhr) {
                         // success callback function
-                        $('p').append(data);
+                        $('p').append(data.input);
+                        $('p').append(data.data);
                         $('#input').val('This is ajax');
                     }
                 });
-
-
             });
 
             // alert('document loaded');
@@ -40,7 +40,6 @@
 		 });
 
         });
-
 
     </script>
 </head>
