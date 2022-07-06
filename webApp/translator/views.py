@@ -7,28 +7,6 @@ from django.http import JsonResponse, HttpResponse
 def ajax(request):
     text = '''
     <!DOCTYPE html>
-    <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-        </script>
-        <script>
-            window.onload = function () {
-                alert('window loaded');
-            };
-    
-            $(document).ready(function () {
-                alert('document loaded');
-            });
-        </script>
-    </head>
-    <body>
-        <h1>Demo: window.onload() vs $(document).ready()</h1>
-    </body>
-    </html>
-    '''
-
-    text2 = '''
-    <!DOCTYPE html>
     
     <html>
     <head>
@@ -64,7 +42,7 @@ def ajax(request):
     </body>
     </html>
     '''
-    return HttpResponse(text2)
+    return HttpResponse(text)
 
 
 def translate(request: HttpRequest):
