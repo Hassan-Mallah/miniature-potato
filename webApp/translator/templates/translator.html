@@ -10,37 +10,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             // form
             $('#myform').on('submit', function(e) {
                 e.preventDefault();
                 alert('Loading');
 
-                $.ajax('/translator/translate_text',   // request url
-                {
-                    success: function (data, status, xhr) {
-                        // success callback function
-                        $('p').append(data.input);
-                        $('p').append(data.data);
-                        $('#input').val('This is ajax');
-                    }
-                });
+                $.ajax('/translator/translate_text', // request url
+                    {
+                        success: function(data, status, xhr) {
+                            // success callback function
+                            $('p').append(data.input);
+                            $('p').append(data.data);
+                            $('#input').val('This is ajax');
+                        }
+                    });
             });
 
-            // alert('document loaded');
-
-
-             $('#ajaxBtn1').click(function(){
-                $.ajax('/translator/ajax_data',   // request url
-                {
-                    success: function (data, status, xhr) {    // success callback function
+            $('#ajaxBtn1').click(function() {
+                $.ajax('/translator/ajax_data', // request url
+                    {
+                        success: function(data, status, xhr) { // success callback function
                             $('p').append(data);
-                    }
-                });
-		 });
+                        }
+                    });
+            });
 
         });
-
     </script>
 </head>
 <body class="bg-light">
