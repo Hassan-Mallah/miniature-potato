@@ -46,7 +46,6 @@ def ajax(request):
 
 
 def translate(request: HttpRequest):
-    print('translate')
     context = {}
 
     if 'input' in request.GET and request.GET['input']:
@@ -76,6 +75,7 @@ def ajax_data(request: HttpRequest):
 
 
 def translate_text(request: HttpRequest):
+    print(request.GET['input'])
     print('translate_text')
     data = {
         'input': 'input',

@@ -13,11 +13,15 @@
         $(document).ready(function() {
             // form
             $('#myform').on('submit', function(e) {
-                e.preventDefault();
-                alert('Loading');
+                var form = $(this);
 
-                $.ajax('/translator/translate_text', // request url
+                e.preventDefault();
+                // alert('Loading');
+
+                $.ajax(
                     {
+                        url: '/translator/translate_text', // request url
+                        data: form.serialize(),
                         success: function(data, status, xhr) {
                             // success callback function
                             $('p').append(data.input);
