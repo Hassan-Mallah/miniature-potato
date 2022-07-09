@@ -26,7 +26,8 @@
                             // success callback function
                             $('p').append(data.input);
                             $('p').append(data.data);
-                            $('#input').val('This is ajax');
+                            $('#input').val(data.input);
+                            $('#output').val(data.output);
                         }
                     });
             });
