@@ -16,7 +16,8 @@
                 var form = $(this);
 
                 e.preventDefault();
-                // alert('Loading');
+                $('#output').val('loading, plz wait...');
+
 
                 $.ajax(
                     {
@@ -24,8 +25,6 @@
                         data: form.serialize(),
                         success: function(data, status, xhr) {
                             // success callback function
-                            $('p').append(data.input);
-                            $('p').append(data.data);
                             $('#input').val(data.input);
                             $('#output').val(data.output);
                         }
@@ -58,20 +57,12 @@
                 <label for="inputLanguage">Select Input Language</label><br>
                 <select id="inputLanguage" name="inputLanguage" class="btn btn-secondary dropdown-toggle">
                     <option>English</option>
-                    <option>Turkish</option>
-                    <option>Russian</option>
-                    <option>Arabic</option>
-                    <option>Chinese</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="outputLanguage">Select Output Language</label><br>
                 <select id="outputLanguage" name="outputLanguage" class="btn btn-secondary dropdown-toggle">
-                    <option>English</option>
                     <option>Turkish</option>
-                    <option>Russian</option>
-                    <option>Arabic</option>
-                    <option>Chinese</option>
                 </select>
             </div>
         </div>
@@ -107,10 +98,6 @@
         <input type="submit" class="btn btn-success w-100" value="Main Menu">
     </form>
 </div>
-    <input type="button" id="ajaxBtn" value="Send Ajax request"/>
 
-<p>
-    This is P
-</p>
 </body>
 </html>
