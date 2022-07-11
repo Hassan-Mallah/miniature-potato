@@ -31,15 +31,6 @@
                     });
             });
 
-            $('#ajaxBtn1').click(function() {
-                $.ajax('/translator/ajax_data', // request url
-                    {
-                        success: function(data, status, xhr) { // success callback function
-                            $('p').append(data);
-                        }
-                    });
-            });
-
         });
     </script>
 </head>
@@ -88,7 +79,7 @@
         {% endif %}
         <div style="text-align: center;">
             <!--            <input type="submit" value="Translate" class="btn btn-warning">-->
-            <input type="submit" value="Translate" class="btn btn-warning" id="ajaxBtn1">
+            <input type="submit" value="Translate" class="btn btn-warning">
         </div>
     </form>
 
