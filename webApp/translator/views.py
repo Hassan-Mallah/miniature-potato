@@ -25,13 +25,6 @@ def translate_text(request: HttpRequest):
             'input': request.GET['input'],
             'output': translation
         }
-        print(context)
         return JsonResponse(context)
 
-    print(request.GET['input'])
-    print('translate_text')
-    data = {
-        'input': 'input',
-        'output': 'output'
-    }
-    return JsonResponse(data)
+    return JsonResponse({})
