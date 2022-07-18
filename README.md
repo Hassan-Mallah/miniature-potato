@@ -9,6 +9,7 @@ Translate app:
 
 News App:
 - lib: gnewsclient
+- https://www.geeksforgeeks.org/build-an-application-to-extract-news-from-google-news-feed-using-python/
 - A news aggregator application.
 This web app uses web crawlers and websites to show a collection of news from various sources.
 You’ll get to aggregate data from multiple sites to create this tool.
