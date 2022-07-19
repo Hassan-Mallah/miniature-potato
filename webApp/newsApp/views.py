@@ -5,5 +5,4 @@ from django.http import HttpRequest, HttpResponse
 # Create your views here.
 
 def news(request: HttpRequest):
-
-    return HttpResponse('This is News App')
+    return render(request, 'news.html')
