@@ -23,6 +23,6 @@ def news(request: HttpRequest):
 
     # in html file, you use key names directly :)
     context = {
-        "news": "This is news"
+        "news": "This is news view"
     }
     return render(request, 'news.html', context=context)
