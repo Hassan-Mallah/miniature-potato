@@ -7,22 +7,23 @@ from gnewsclient import gnewsclient
 
 def news(request: HttpRequest):
     # declare a NewsClient object
-    # client = gnewsclient.NewsClient(
-    #     language='english',
-    #     location='turkey',
-    #     topic='Business',
-    #     max_results=5)
-    #
-    # # get news feed
-    # news = client.get_news()
-    #
-    # for item in news:
-    #     print("Title : ", item['title'])
-    #     print("Link : ", item['link'])
-    #     print("")
+    client = gnewsclient.NewsClient(
+        language='english',
+        location='turkey',
+        topic='Business',
+        max_results=5)
+
+    # get news feed
+    news = client.get_news()
+
+    for item in news:
+        print("Title : ", item['title'])
+        print("Link : ", item['link'])
+        print("")
 
     # in html file, you use key names directly :)
     context = {
-        "news": "This is news view"
+        # "news": "This is news view"
+        "news": news
     }
     return render(request, 'news.html', context=context)

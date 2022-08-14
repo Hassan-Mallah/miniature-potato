@@ -18,8 +18,15 @@
         <h1>Welcome to News App!</h1>
     </div>
     <div>
-        {{ news }}
+        <!-- Go over news data and print them -->
+        {% for i in news %}
+            Title: {{ i.title }}
+            <br>
+            <a href="{{ i.link }}">More...</a>
+            <br><br>
+        {% endfor %}
     </div>
+
     <!-- main menu button -->
     <br>
     <form action="..">
